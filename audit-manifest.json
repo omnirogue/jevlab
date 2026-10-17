@@ -1,0 +1,131 @@
+{
+  "schema_version": 2,
+  "package": "jevlab",
+  "version": "0.1.0",
+  "repository": "https://github.com/omnirogue/jevlab",
+  "license": "Apache-2.0",
+  "license_file": "LICENSE",
+  "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "rust_included": false,
+  "included_crates": [],
+  "audit": {
+    "date": "2026-10-16",
+    "method": "Explicit standalone file inventory; release audit checks license, excluded source, credential patterns, private identifiers and bundled-asset parity. Public templates and bias samples are newly authored synthetic material.",
+    "publication_ready": true
+  },
+  "included_sources": [
+    "jevlab_oss/",
+    "jevlab/",
+    "ui/JevLabStudio.tsx"
+  ],
+  "preserved_modules": [
+    "jevlab_oss/metrics.py",
+    "jevlab_oss/fixtures.py",
+    "jevlab_oss/judges.py",
+    "jevlab_oss/bench.py"
+  ],
+  "ui_provenance": "Standalone adaptation of the existing JEV Lab calibration studio. React-only imports; private service, ledger and application dependencies excluded.",
+  "excluded_private_assets": [
+    {
+      "asset": "OmniSI Cloud JEV Oracle Rust engine",
+      "reason": "Proprietary multi-tenant engine; excluded from this distribution."
+    },
+    {
+      "asset": "Production compliance rubrics and live consensus router",
+      "reason": "Proprietary logic; only generic public templates are included."
+    },
+    {
+      "asset": "Customer corpora, evaluation histories, internal prompts and infrastructure identifiers",
+      "reason": "Private data; examples are synthetic."
+    },
+    {
+      "asset": "Provider credentials and environment files",
+      "reason": "Secrets are never distributed."
+    }
+  ],
+  "release_blockers": [],
+  "verification": {
+    "audit": "python3 scripts/audit_release.py",
+    "tests": "python3 -m unittest discover -s tests -v",
+    "build": "python3 -m build",
+    "ui": "cd ui && npm run typecheck && npx playwright test",
+    "ci": ".github/workflows/ci.yml",
+    "deployment": "None; local repository and CI artifacts only.",
+    "results": {
+      "date": "2026-10-16",
+      "python": "27 tests passed on a remote Linux build host with Python 3.12; includes unchanged legacy tests and real MCP stdio roundtrip.",
+      "packaging": "Wheel and source distribution built. Installed wheel commands passed away from the source directory. Extracted source distribution passed audit and 27 tests.",
+      "studio": "TypeScript strict check passed. Four Chromium tests passed at 1440x1000 and 390x844; covers imports, judge/method selection, tabs, escaped labels and self-contained HTML.",
+      "local": "Only short CLI smoke and static export checks performed locally.",
+      "ci_status": "Standalone GitHub Actions workflow provided; remote GitHub execution not requested or claimed.",
+      "publication": "Prepared locally. No repository push, package publication, merge or deployment performed."
+    }
+  },
+  "package_files": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/publish.yml",
+    ".gitignore",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "MANIFEST.in",
+    "NOTICE",
+    "README.md",
+    "SECURITY.md",
+    "audit-manifest.json",
+    "fixtures/bias_pairs.json",
+    "fixtures/make_synthetic.py",
+    "fixtures/synthetic_sample.json",
+    "jevlab/__init__.py",
+    "jevlab/__main__.py",
+    "jevlab/cli.py",
+    "jevlab/mcp_server.py",
+    "jevlab_oss/__init__.py",
+    "jevlab_oss/__main__.py",
+    "jevlab_oss/bench.py",
+    "jevlab_oss/calibration.py",
+    "jevlab_oss/cli.py",
+    "jevlab_oss/data/fixtures/bias_pairs.json",
+    "jevlab_oss/data/fixtures/synthetic_sample.json",
+    "jevlab_oss/data/rubrics/agent_trajectory_efficiency.yaml",
+    "jevlab_oss/data/rubrics/api_contract_safety.yaml",
+    "jevlab_oss/data/rubrics/code_review_correctness.yaml",
+    "jevlab_oss/data/rubrics/patch_minimalism.yaml",
+    "jevlab_oss/data/rubrics/rag_citation_grounding.yaml",
+    "jevlab_oss/data/rubrics/security_diff_review.yaml",
+    "jevlab_oss/data/rubrics/sql_equivalence.yaml",
+    "jevlab_oss/data/rubrics/summarization_faithfulness.yaml",
+    "jevlab_oss/data/rubrics/test_quality.yaml",
+    "jevlab_oss/data/rubrics/tool_call_precision.yaml",
+    "jevlab_oss/fixtures.py",
+    "jevlab_oss/judges.py",
+    "jevlab_oss/legacy_cli.py",
+    "jevlab_oss/mcp_server.py",
+    "jevlab_oss/metrics.py",
+    "jevlab_oss/report.py",
+    "jevlab_oss/resources.py",
+    "pyproject.toml",
+    "rubrics/agent_trajectory_efficiency.yaml",
+    "rubrics/api_contract_safety.yaml",
+    "rubrics/code_review_correctness.yaml",
+    "rubrics/patch_minimalism.yaml",
+    "rubrics/rag_citation_grounding.yaml",
+    "rubrics/rubric_template.json",
+    "rubrics/security_diff_review.yaml",
+    "rubrics/sql_equivalence.yaml",
+    "rubrics/summarization_faithfulness.yaml",
+    "rubrics/test_quality.yaml",
+    "rubrics/tool_call_precision.yaml",
+    "scripts/audit_release.py",
+    "tests/test_calibration.py",
+    "tests/test_jevlab_oss.py",
+    "tests/test_mcp.py",
+    "tests/test_release.py",
+    "ui/JevLabStudio.tsx",
+    "ui/README.md",
+    "ui/package.json",
+    "ui/playwright.config.ts",
+    "ui/tests/app.tsx",
+    "ui/tests/serve.mjs",
+    "ui/tests/studio.spec.ts"
+  ]
+}

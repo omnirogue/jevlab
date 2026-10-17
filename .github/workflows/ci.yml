@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The OmniSI Authors
+name: JevLab CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/audit_release.py
+      - run: python -m unittest discover -s tests -v
+      - run: python -m pip install build
+      - run: python -m build
+      - name: Install and exercise the wheel away from the source tree
+        shell: bash
+        run: |
+          python -m venv "$RUNNER_TEMP/jevlab-wheel"
+          "$RUNNER_TEMP/jevlab-wheel/bin/pip" install dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/jevlab-wheel/bin/jevlab" bench --json > benchmark.json
+          "$RUNNER_TEMP/jevlab-wheel/bin/jevlab" calibrate --output calibration.html
+          "$RUNNER_TEMP/jevlab-wheel/bin/jevlab-oss" bias-audit --json > bias.json
+          "$RUNNER_TEMP/jevlab-wheel/bin/jevlab" rubrics show test_quality
+          "$RUNNER_TEMP/jevlab-wheel/bin/python" -c 'import jevlab.calibration; import jevlab_oss.metrics'
+          printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"ping"}' | "$RUNNER_TEMP/jevlab-wheel/bin/jevlab-mcp"
+      - uses: actions/upload-artifact@v4
+        if: matrix.python-version == '3.12'
+        with:
+          name: jevlab-distributions
+          path: dist/*
+  studio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --ignore-scripts --package-lock=false
+        working-directory: ui
+      - run: npm run typecheck
+        working-directory: ui
+      - run: npx playwright install --with-deps chromium
+        working-directory: ui
+      - run: npx playwright test
+        working-directory: ui
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: studio-browser-evidence
+          path: ui/test-results/

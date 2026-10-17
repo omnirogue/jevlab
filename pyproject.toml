@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The OmniSI Authors
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jevlab"
+version = "0.1.0"
+description = "Offline LLM-as-judge evaluation, bias diagnostics and calibration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "The OmniSI Authors"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Artificial Intelligence"]
+
+[project.urls]
+Repository = "https://github.com/omnirogue/jevlab"
+Issues = "https://github.com/omnirogue/jevlab/issues"
+
+[project.scripts]
+jevlab = "jevlab_oss.cli:main"
+jevlab-oss = "jevlab_oss.cli:main"
+jevlab-mcp = "jevlab_oss.mcp_server:main"
+
+[tool.setuptools]
+packages = ["jevlab", "jevlab_oss"]
+
+[tool.setuptools.package-data]
+jevlab_oss = ["data/fixtures/*.json", "data/rubrics/*.yaml"]

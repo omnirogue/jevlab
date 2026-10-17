@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "license": "Apache-2.0",
+  "description": "Public starter rubric. Write each question so a yes is unambiguous and checkable against the item text alone. Replace these with your own questions; keep private rubrics out of this repository.",
+  "id": "public-reply-quality-v1",
+  "questions": [
+    {
+      "id": "resolves",
+      "text": "Does the reply resolve the customer's stated problem?",
+      "kind": "yes_no",
+      "guidance": "Yes only if the reply takes or confirms the action that fixes the problem."
+    },
+    {
+      "id": "specific",
+      "text": "Does the reply state a concrete amount, date or next step?",
+      "kind": "yes_no",
+      "guidance": "Generic policy language or 'we will be in touch' is a no."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+dist/
+build/
+*.egg-info/
+node_modules/
+calibration_report.html
+calibration_report.json
+ui/.test-assets/
+ui/test-results/
+ui/playwright-report/

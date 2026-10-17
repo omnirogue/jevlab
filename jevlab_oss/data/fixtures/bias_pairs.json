@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "license": "Apache-2.0",
+  "description": "Invented responses and simulated judge probabilities; no real evaluations.",
+  "pairs": [
+    {
+      "id": "consistent-1",
+      "judge": "consistent",
+      "a": "The answer is four.",
+      "b": "## Result\n- The answer is four.\n- This follows from adding two and two.",
+      "forward": 0.7,
+      "swapped": 0.3,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "consistent-2",
+      "judge": "consistent",
+      "a": "## Result\n- The answer is four.\n- Check: two plus two equals four.",
+      "b": "Four.",
+      "forward": 0.3,
+      "swapped": 0.7,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "consistent-3",
+      "judge": "consistent",
+      "a": "Four.",
+      "b": "The sum is four.",
+      "forward": 0.6,
+      "swapped": 0.4,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "consistent-4",
+      "judge": "consistent",
+      "a": "**Four.**",
+      "b": "Four.",
+      "forward": 0.5,
+      "swapped": 0.5,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "consistent-5",
+      "judge": "consistent",
+      "a": "The answer is four.",
+      "b": "- Four.",
+      "forward": 0.8,
+      "swapped": 0.2,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "consistent-6",
+      "judge": "consistent",
+      "a": "## Answer\nFour.",
+      "b": "Four.",
+      "forward": 0.4,
+      "swapped": 0.6,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "first-position-1",
+      "judge": "first-position",
+      "a": "The answer is four.",
+      "b": "## Result\n- The answer is four.\n- This follows from adding two and two.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "first-position-2",
+      "judge": "first-position",
+      "a": "## Result\n- The answer is four.\n- Check: two plus two equals four.",
+      "b": "Four.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "first-position-3",
+      "judge": "first-position",
+      "a": "Four.",
+      "b": "The sum is four.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "first-position-4",
+      "judge": "first-position",
+      "a": "**Four.**",
+      "b": "Four.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "first-position-5",
+      "judge": "first-position",
+      "a": "The answer is four.",
+      "b": "- Four.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "first-position-6",
+      "judge": "first-position",
+      "a": "## Answer\nFour.",
+      "b": "Four.",
+      "forward": 0.8,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "style-sensitive-1",
+      "judge": "style-sensitive",
+      "a": "The answer is four.",
+      "b": "## Result\n- The answer is four.\n- This follows from adding two and two.",
+      "forward": 0.2,
+      "swapped": 0.8,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "style-sensitive-2",
+      "judge": "style-sensitive",
+      "a": "## Result\n- The answer is four.\n- Check: two plus two equals four.",
+      "b": "Four.",
+      "forward": 0.9,
+      "swapped": 0.09999999999999998,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "style-sensitive-3",
+      "judge": "style-sensitive",
+      "a": "Four.",
+      "b": "The sum is four.",
+      "forward": 0.4,
+      "swapped": 0.6,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "style-sensitive-4",
+      "judge": "style-sensitive",
+      "a": "**Four.**",
+      "b": "Four.",
+      "forward": 0.8,
+      "swapped": 0.19999999999999996,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    },
+    {
+      "id": "style-sensitive-5",
+      "judge": "style-sensitive",
+      "a": "The answer is four.",
+      "b": "- Four.",
+      "forward": 0.3,
+      "swapped": 0.7,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-beta",
+      "b_model": "simulated-alpha"
+    },
+    {
+      "id": "style-sensitive-6",
+      "judge": "style-sensitive",
+      "a": "## Answer\nFour.",
+      "b": "Four.",
+      "forward": 0.8,
+      "swapped": 0.19999999999999996,
+      "judge_model": "simulated-alpha",
+      "a_model": "simulated-alpha",
+      "b_model": "simulated-beta"
+    }
+  ]
+}

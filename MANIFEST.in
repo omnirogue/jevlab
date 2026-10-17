@@ -1,0 +1,12 @@
+include LICENSE NOTICE README.md SECURITY.md CONTRIBUTING.md audit-manifest.json
+include .gitignore
+recursive-include .github *.yml
+recursive-include fixtures *.py *.json
+recursive-include rubrics *.json *.yaml
+recursive-include tests *.py
+recursive-include ui *.tsx *.ts *.mjs *.md *.json
+prune ui/node_modules
+prune ui/.test-assets
+prune ui/test-results
+prune ui/playwright-report
+recursive-include scripts *.py

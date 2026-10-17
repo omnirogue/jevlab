@@ -1,0 +1,13 @@
+JevLab
+Copyright 2026 The OmniSI Authors
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE for the full license text and patent terms.
+
+This release preserves the original clean-room Python JEV Lab harness and
+adapts its calibration studio into a standalone React component. New public
+rubric templates and demonstration fixtures are synthetic. No third-party
+source code is vendored. React and development tools retain their own licenses.
+
+The OmniSI Cloud JEV Oracle, its Rust engine, production compliance rubrics,
+and live consensus router are proprietary and are not part of this release.

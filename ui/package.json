@@ -1,0 +1,20 @@
+{
+  "name": "jevlab-studio-checks",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit --strict --jsx react-jsx --moduleResolution bundler --module esnext --target es2020 --lib es2020,dom --skipLibCheck JevLabStudio.tsx"
+  },
+  "peerDependencies": { "react": ">=18" },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@playwright/test": "^1.51.0",
+    "esbuild": "^0.25.0"
+  }
+}
